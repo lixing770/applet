@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/detail/detail",
+    "pages/shoucang/shoucang",
+    "pages/shoucangVideo/shoucangVideo",
+    "pages/search/search",
+    "pages/video/video",
+    "pages/videoDetail/videoDetail",
+    "pages/myComment/myComment",
+    "pages/me/me"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00CD66",
+    "navigationBarTitleText": "老年健康资讯小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#FF4D4F",
+    "borderStyle": "black",
+    "list": [{
+        "selectedIconPath": "image/wenzhang2.png",
+        "iconPath": "image/wenzhang1.jpg",
+        "pagePath": "pages/home/home",
+        "text": "新闻资讯"
+      },
+      {
+        "selectedIconPath": "image/shipin2.jpg",
+        "iconPath": "image/shipin1.jpg",
+        "pagePath": "pages/video/video",
+        "text": "视频"
+      },
+      {
+        "selectedIconPath": "image/geren2.png",
+        "iconPath": "image/geren1.jpg",
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.address": {
+      "desc": "获取收货地址"
+    },
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    },
+    "scope.userInfo": {
+      "desc": "用户信息"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

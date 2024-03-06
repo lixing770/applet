@@ -1,0 +1,13 @@
+<view class="root">
+    <block wx:for="{{list}}" wx:key="index">
+        <view class="item" bindtap="goDetail" data-id="{{item._id}}">
+            <image class="item_img" src="{{item.img}}" mode="aspectFill"></image>
+            <view class="item_title">{{item.title}}</view>
+            <view class="bottom">
+                <text>{{item.liulan}}浏览</text>
+                <text class="shoucang">{{item.shoucang}}收藏</text>
+            </view>
+        </view>
+    </block>
+
+</view>

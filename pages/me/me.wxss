@@ -1,0 +1,48 @@
+page {
+  background: #00CD66;
+}
+
+.login_root {
+  display: flex;
+  margin: 40rpx;
+  align-items: center;
+}
+
+.avatar {
+  border-radius: 128rpx;
+  width: 128rpx;
+  height: 128rpx;
+  margin-block-start: 10px;
+  margin-right: 20rpx;
+}
+
+.nickname {
+  color: white;
+  margin-top: 20rpx;
+  font-size: 38rpx;
+}
+
+.tuichu {
+  font-size: 30rpx;
+  color: gray;
+  margin-top: 15rpx;
+}
+
+
+/*  下面是关键去除边框 */
+.button {
+  width: 100%;
+  background: white;
+  border: none;
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1.5;
+  font-size: 16px
+}
+
+/*  下面是关键去除边框 */
+.button::after {
+  border: none;
+  border-radius: 0;
+}

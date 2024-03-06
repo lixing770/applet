@@ -1,0 +1,42 @@
+page {
+    background: gainsboro;
+}
+
+.root {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 344rpx;
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+    background: white;
+    border-radius: 15rpx;
+}
+
+.item_img {
+    width: 100%;
+    height: 350rpx;
+    border-radius: 15rpx 15rpx 0 0;
+}
+
+.item_title {
+    margin: 2rpx 10rpx;
+    font-size: 35rpx;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-break: break-all;
+}
+
+.bottom {
+    font-size: 30rpx;
+    color: gray;
+    margin: 15rpx;
+}
+
+.shoucang {
+    margin-left: 40rpx;
+}

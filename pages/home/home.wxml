@@ -1,0 +1,32 @@
+<!-- 搜索区域 -->
+<view class="search_root">
+  <input bindconfirm='goSearch' confirm-type='search' bindinput="getSearch" class="search_input" placeholder="搜索信息" />
+  <image bindtap="goSearch" class="search_icon" src="/image/chazhao1.jpg" />
+</view>
+<!-- 轮播图区域 -->
+<swiper indicator-dots="{{true}}" indicator-active-color="#ff0000" autoplay="true" circular="true">
+  <swiper-item wx:for="{{topList}}" wx:key="index" bindtap="goDetail" data-id="{{item._id}}">
+    <image src="{{item.img}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+
+<!--导航条-->
+<scroll-view scroll-x class="navbar" scroll-with-animation scroll-left="{{scrollLeft}}rpx">
+  <view class="nav-item" wx:for="{{tabs}}" wx:key="index" bindtap="tabSelect" data-index="{{index}}">
+    <view class="nav-text {{index==tabCur?'tab-on':''}}">{{item._id}}</view>
+  </view>
+</scroll-view>
+<view class="content_root">
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="item_root" bindtap="goDetail" data-id="{{item._id}}">
+      <image class="item_img" src="{{item.img}}" />
+      <view>
+        <view class="title">{{item.title}}</view>
+        <view class="bottom">
+          <text>{{item.liulan}}浏览</text>
+          <text class="shoucang">{{item.shoucang}}收藏</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

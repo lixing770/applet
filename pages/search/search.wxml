@@ -1,0 +1,14 @@
+<!-- 搜索区域 -->
+<view class="search_root">
+  <input value='{{searchKey}}' bindconfirm='goSearch' confirm-type='search' bindinput="getSearch" class="search_input" placeholder="搜索信息" />
+  <image bindtap="goSearch" class="search_icon" src="../../image/chazhao1.jpg" />
+</view>
+<!-- 列表 -->
+
+<view wx:for="{{list}}" class="item" bindtap="goForumDetail" data-id="{{item._id}}">
+  <image class="item_img" src="{{item.img}}"></image>
+  <view>
+    <view class="item_title">{{item.title}}</view>
+    <view class="item_type">类型:{{item.type}}</view>
+  </view>
+</view>

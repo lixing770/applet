@@ -1,0 +1,9 @@
+<block wx:if="{{list&&list.length>0}}">
+  <view wx:for="{{list}}" wx:key="_id">
+    <view class="item_root" bindtap="goDetail" data-id="{{item._id}}">
+      <image class="item_img" src="{{item.img}}" mode="aspectFill"></image>
+      <text class="title">{{item.title}}</text>
+    </view>
+  </view>
+</block>
+<view wx:else class="tip">您还没有收藏任何内容</view>

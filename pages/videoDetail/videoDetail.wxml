@@ -1,0 +1,56 @@
+<!--导入时间格式化工具filter.wxs-->
+<wxs src="../../utils/filter.wxs" module="filters" />
+<text class="title">{{detail.title}}</text>
+<view class="root2">
+  <view class="root2-1">
+    <view>
+      <text>作者:{{detail.zuozhe}}</text>
+      <text>{{time}}</text>
+    </view>
+    <view>
+      <text> {{liulanNum}}次浏览 </text>
+      <text> {{shouCangNum}}人收藏 </text>
+    </view>
+  </view>
+</view>
+<video class="img" src="{{detail.video}}" mode="widthFix"></video>
+<rich-text nodes="{{detail.content}}"></rich-text>
+<!-- 热门推荐 -->
+<view class="hot">热门推荐</view>
+<block wx:for="{{hotList}}" wx:key="index">
+  <view class="item_root" bindtap="goDetail" data-id="{{item._id}}">
+    <image class="item_img" src="{{item.img}}" />
+    <view>
+      <view class="title">{{item.title}}</view>
+      <view class="bottom">
+        <text>{{item.liulan}}浏览</text>
+        <text class="shoucang">{{item.shoucang}}收藏</text>
+      </view>
+    </view>
+  </view>
+</block>
+<!-- 评论区域 -->
+<view class="ping_root">
+  <view class="hot">评论区域</view>
+  <view class="answer_content" wx:if="{{list&&list.length>0}}">
+    <block wx:for="{{list}}" wx:key="key">
+      <view class="pinglun_item_root">
+        <view class="top_root">
+          <image class='img_left' src='{{item.avatarUrl}}' />
+          <view class="top_right">
+            <text class='name'>{{item._createTime?filters.formatDate(item._createTime):''}}</text>
+            <text class='name'>{{item.name}}评论：</text>
+          </view>
+        </view>
+        <view class='content'>{{item.content}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+
+
+<!-- 底部区域 -->
+<view class="bottom_root">
+  <view class="bottom_fabu" bindtap="publish">发布评论</view>
+  <image class="bottom_img" src="{{isShouCang?'../../image/shoucang-ok.png':'../../image/shoucang-no.png'}}" bindtap="shoucang" data-detail="{{detail}}"></image>
+</view>
